@@ -25,10 +25,6 @@ import com.karumi.dexter.listener.PermissionGrantedResponse;
 import com.karumi.dexter.listener.PermissionRequest;
 import com.karumi.dexter.listener.multi.MultiplePermissionsListener;
 import com.karumi.dexter.listener.single.PermissionListener;
-import com.onegravity.contactpicker.contact.ContactDescription;
-import com.onegravity.contactpicker.core.ContactPickerActivity;
-import com.onegravity.contactpicker.picture.ContactPictureType;
-
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity{
@@ -50,7 +46,7 @@ public class MainActivity extends AppCompatActivity{
         Dexter.withContext(this)
                 .withPermissions(
                         Manifest.permission.SEND_SMS,
-                        Manifest.permission.READ_CONTACTS,
+                        Manifest.permission.READ_CONTACTS
                 ).withListener(new MultiplePermissionsListener() {
             @Override public void onPermissionsChecked(MultiplePermissionsReport report) {/* ... */}
             @Override public void onPermissionRationaleShouldBeShown(List<PermissionRequest> permissions, PermissionToken token) {/* ... */}
