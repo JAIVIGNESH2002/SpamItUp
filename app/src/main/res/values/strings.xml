@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">automateMessage</string>
+    <string name="automate_msgs">AUTOMATE MSGS</string>
+    <string name="recip_no">Recip no:</string>
+    <string name="enter_the_count">Enter the count--</string>
+    <string name="send">SEND</string>
+    <string name="say_your_message">Say your message</string>
+    <string name="recp_no">Recp no:</string>
+    <string name="enter_thecount">Enter the count:</string>
+</resources>
