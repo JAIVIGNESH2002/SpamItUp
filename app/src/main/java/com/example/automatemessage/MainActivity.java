@@ -25,6 +25,9 @@ import com.karumi.dexter.listener.PermissionGrantedResponse;
 import com.karumi.dexter.listener.PermissionRequest;
 import com.karumi.dexter.listener.multi.MultiplePermissionsListener;
 import com.karumi.dexter.listener.single.PermissionListener;
+import com.wafflecopter.multicontactpicker.LimitColumn;
+import com.wafflecopter.multicontactpicker.MultiContactPicker;
+
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity{
@@ -33,9 +36,11 @@ public class MainActivity extends AppCompatActivity{
     private EditText count;
     private Button contacts;
     public Button send;
+    private static final int CONTACT_PICKER_REQUEST = 222;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         number = findViewById(R.id.number);
@@ -68,6 +73,21 @@ public class MainActivity extends AppCompatActivity{
         contacts.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                new MultiContactPicker.Builder(MainActivity.this) //Activity/fragment context//Optional - default: MultiContactPicker.Azure
+                        .hideScrollbar(false) //Optional - default: false
+                        .showTrack(true) //Optional - default: true
+                        .searchIconColor(Color.WHITE) //Option - default: White
+                        .setChoiceMode(MultiContactPicker.CHOICE_MODE_MULTIPLE) //Optional - default: CHOICE_MODE_MULTIPLE
+                        .handleColor(ContextCompat.getColor(MainActivity.this, R.color.azureColorAccent)) //Optional - default: Azure Blue
+                        .bubbleColor(ContextCompat.getColor(MainActivity.this, R.color.azureColorAccent)) //Optional - default: Azure Blue
+                        .bubbleTextColor(Color.WHITE) //Optional - default: White
+                        .setTitleText("Select Contacts") //Optional - default: Select Contacts//Optional - will pre-select contacts of your choice. String... or List<ContactResult>
+                        .setLoadingType(MultiContactPicker.LOAD_ASYNC) //Optional - default LOAD_ASYNC (wait till all loaded vs stream results)
+                        .limitToColumn(LimitColumn.NONE) //Optional - default NONE (Include phone + email, limiting to one can improve loading time)
+                        .setActivityAnimations(android.R.anim.fade_in, android.R.anim.fade_out,
+                                android.R.anim.fade_in,
+                                android.R.anim.fade_out) //Optional - default: No animation overrides
+                        .showPickerForResult(CONTACT_PICKER_REQUEST);
 
             }
         }
