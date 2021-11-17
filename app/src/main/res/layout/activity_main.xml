@@ -8,8 +8,8 @@
 
     <EditText
         android:id="@+id/message"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="202dp"
+        android:layout_height="130dp"
         android:ems="10"
         android:hint="@string/say_your_message"
         android:importantForAutofill="no"
@@ -17,16 +17,17 @@
         android:minHeight="48dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.444"
+        app:layout_constraintVertical_bias="0.459"
         tools:ignore="TextContrastCheck" />
 
     <Button
         android:id="@+id/sendButton"
         android:layout_width="145dp"
         android:layout_height="55dp"
-        android:layout_marginBottom="204dp"
+        android:layout_marginBottom="144dp"
         android:text="@string/send"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -48,13 +49,13 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.217" />
+        app:layout_constraintVertical_bias="0.0" />
 
     <EditText
         android:id="@+id/number"
-        android:layout_width="wrap_content"
+        android:layout_width="200dp"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="40dp"
+        android:layout_marginBottom="84dp"
         android:ems="10"
         android:hint="@string/recp_no"
         android:importantForAutofill="no"
@@ -62,7 +63,7 @@
         android:minHeight="48dp"
         app:layout_constraintBottom_toTopOf="@+id/message"
         app:layout_constraintEnd_toEndOf="@+id/message"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="@+id/message"
         tools:ignore="TextContrastCheck" />
 
@@ -82,4 +83,16 @@
         app:layout_constraintTop_toBottomOf="@+id/message"
         app:layout_constraintVertical_bias="0.506"
         tools:ignore="TextContrastCheck" />
+
+    <Button
+        android:id="@+id/contacts"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:text="PICK CONTACTS"
+        app:layout_constraintBottom_toTopOf="@+id/message"
+        app:layout_constraintEnd_toEndOf="@+id/number"
+        app:layout_constraintHorizontal_bias="0.9"
+        app:layout_constraintStart_toStartOf="@+id/number"
+        app:layout_constraintTop_toBottomOf="@+id/number"
+        app:layout_constraintVertical_bias="0.555" />
 </androidx.constraintlayout.widget.ConstraintLayout>
