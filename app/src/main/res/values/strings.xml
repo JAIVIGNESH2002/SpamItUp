@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">automateMessage</string>
+    <string name="app_name">SpamItUp</string>
     <string name="automate_msgs">AUTOMATE MSGS</string>
     <string name="recip_no">Recip no:</string>
     <string name="enter_the_count">Enter the count--</string>
